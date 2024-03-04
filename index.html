@@ -38,6 +38,7 @@
       color: #fff;
       line-height: 120%;
       font-weight: 400;
+      margin-top: 0;
     }
     p{
       font-size: 24px;
@@ -53,6 +54,7 @@
     .backgorund-affect {
       position: relative;
       left: -200px;
+      top: 60px;
     }
     .swiper-container {
       width: 100%;
@@ -80,9 +82,65 @@
     svg.sphere{
       fill: #311356;
     }
+    header {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 10;
+      width: 100%;
+      padding: 38px 0;
+    }
+    .menu {
+      display: flex;
+      align-items: center;
+    }
+    nav {
+      display: flex;
+      gap: 27px;
+      margin-inline: auto;
+    }
+    nav a {
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 400;
+    }
+    img.idioma {
+        width: 107px;
+        height: 34px;
+        object-fit: cover;
+        object-position: right;
+    }
+    header .container {
+        width: min(100% - 40px, 1377px);
+    }
+ 
+    .carrossel-container {
+      width: 100%;
+      max-width: 2160px;
+    }
+    
   </style>
 </head>
 <body>
+  <header>
+    <div class="container">
+      <div class="menu">
+        <img src="logo.png" alt="" class="logo">
+        <nav>
+          <a href="">História</a>
+          <a href="">Nossas marcas</a>
+          <a href="">Imprensa</a>
+          <a href="">Investidores</a>
+          <a href="">Sustentabilidade</a>
+          <a href="">Corporativo</a>
+          <a href="">Contato</a>
+        </nav>
+        <img src="pt-br.png" alt="" class="idioma">
+      </div>
+    </div>
+  </header>
+  <div class="relative-container">
     <div class="container">
       <div class="content-page">
         <div>
@@ -127,69 +185,78 @@
             </div>
           </div>
         </div>
+    </div>
 
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="1.png" alt="teste">
-              </div>
+    <div class="carrossel-container">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="1.png" alt="teste">
             </div>
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="2.png" alt="teste">
-              </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="2.png" alt="teste">
             </div>
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="3.png" alt="teste">
-              </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="3.png" alt="teste">
             </div>
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="4.png" alt="teste">
-              </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="4.png" alt="teste">
             </div>
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="5.png" alt="teste">
-              </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="5.png" alt="teste">
             </div>
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="6.png" alt="teste">
-              </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="6.png" alt="teste">
             </div>
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="7.png" alt="teste">
-              </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="7.png" alt="teste">
             </div>
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="8.png" alt="teste">
-              </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="8.png" alt="teste">
             </div>
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="9.png" alt="teste">
-              </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="9.png" alt="teste">
             </div>
-         </div>
+          </div>
+        </div>
       </div>
     </div>
+
+  </div>
     
   <script src="https://codepen.io/juliangarnier/pen/75efae7724dbc3c055e918057fc4aca5.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
   <script>
     var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 5,
-      spaceBetween: 30,
+      slidesPerView: 7,
+      spaceBetween: 0,
+      speed: 2500,
+      loop: true,
+      centeredSlides: true,
       autoplay: {
-        delay: 5000,
+        delay: 0,
+        disableOnInteraction: true,
       },
     });
+
     function fitElementToParent(el, padding) {
       var timeout = null;
       function resize() {
